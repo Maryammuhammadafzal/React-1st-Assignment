@@ -4,13 +4,22 @@ import viteLogo from '/vite.svg'
 
 import './App.css'
 import Navbar from './components/Navbar/Navbar.jsx'
+import Hero from './components/Hero/hero.jsx'
+import About from './components/About/About.jsx'
+import Services from './components/Services/services.jsx'
+import Contact from './components/Contact/Contact.jsx'
 function App() {
   
 
   return (
     <>
-     <div className="container bg-gradient-to-r from-[#D8A7B1] to-[#FAF9F6] text-[#2F4F4F]">
+     <div className="md:w-full md:min-h-96 w-full md:m-0 p-0 md:p-0 md:justify-center md:items-center md:flex md:flex-col m-0">
      <Navbar/>
+     <Hero/>
+     <About/>
+     <Services/>
+     <Contact/>
+
      </div>
     </>
   )

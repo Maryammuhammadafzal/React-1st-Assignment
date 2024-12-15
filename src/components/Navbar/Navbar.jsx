@@ -1,71 +1,46 @@
-import React from "react";
-import logo from "../../assets/Logo/my-logo.svg";
+import React, { useState } from "react";
+import logo from "../../assets/my-image/Maryam Afzal-logo.png";
 
 
 function Navbar() {
-  const navbarMenu = () => {
-    _s2();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const navbarMenu = () => {
+  //   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-    const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen);
-    };
-    return isMenuOpen
-  };
+  //   const toggleMenu = () => {
+  //     setIsMenuOpen(!isMenuOpen);
+  //   };
+    
+  const toggle = ()=>{
+    let dropDown = document.getElementById("myDropdown");
+    if(dropDown.classList.contains("hidden")){
+      dropDown.classList.remove("show");
+  }
+  else{
+    dropDown.classList.remove("show");
+    dropDown.classList.add("hidden");
+    }
+  }
+  let toggleBtn = document.getElementById('toggleBtn')
+ toggleBtn && toggleBtn.addEventListener('click', toggle)
+
+ 
   return (
-    <div className="bg-red-200 w-full">
-      <div className="m-2 w-full p-2 bg-slate-500 flex justify-between">
+    <div className=" w-full h-20 md:px-4 md:py-2">
+      <div className="w-full flex justify-between">
         <div className="left">
           <div className="w-fit">
-            <img src={logo} className="w-12 h-12" alt="logo" />
+            <img src={logo} className="w-12 xl:w-16 xl:h-16 h-12" alt="logo" />
           </div>
         </div>
 
-        <div className="right w-8 bg-slate-100 mx-3">
-          <div className="w-fit">
-            <button
-              type="button"
-              class="relative w-fit inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span class="absolute -inset-0.5"></span>
-              <span class="sr-only">Open main menu</span>
-              <svg
-                class="block size-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                data-slot="icon"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-              <svg
-                class="hidden size-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                data-slot="icon"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18 18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+        <div className="right w-8 bg-slate-100 mx-3 h-8">
+          <div className="w-full md:hidden h-full rounded-md border-2 border-black border-solid flex flex-col justify-center space-y-1 items-center cursor-pointer" id="toggleBtn">
+            <div className="line w-6 h-[0.1rem] bg-black">-</div>
+            <div className="line w-6 h-[0.1rem] bg-black">-</div>
+            <div className="line w-6 h-[0.1rem] bg-black">-</div>
           </div>
-        
-        {isMenuOpen && (<div class="hidden sm:ml-6 sm:block">
-          <div class="flex space-x-4">
+          <div class="hidden sm:ml-6 sm:block" id="myDropdown">
+          <div class=" space-x-4 hidden">
             <a
               href="#"
               class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
@@ -92,10 +67,10 @@ function Navbar() {
               Calendar
             </a>
           </div>
-        </div>)}
+        </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden sm:flex space-x-4">
+       {/* Desktop Menu */}
+         <div className="hidden dm space-x-4">
             <a href="#about" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
               About
             </a>
@@ -106,10 +81,13 @@ function Navbar() {
               Contact
             </a>
           </div>
+
+
       </div>
       </div>
     </div>
   );
+// };
 }
 
 export default Navbar;
