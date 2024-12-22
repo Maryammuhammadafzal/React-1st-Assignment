@@ -1,93 +1,89 @@
 import React, { useState } from "react";
-import logo from "../../assets/my-image/Maryam Afzal-logo.png";
+// import logo from "../../assets/my-image/Maryam Afzal-logo.png";
 
 
 function Navbar() {
-  // const navbarMenu = () => {
-  //   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//    const navbarMenu = () => {
+//      const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  //   const toggleMenu = () => {
-  //     setIsMenuOpen(!isMenuOpen);
-  //   };
+//      const toggleMenu = () => {
+//        setIsMenuOpen(!isMenuOpen);
+//      };
     
-  const toggle = ()=>{
-    let dropDown = document.getElementById("myDropdown");
-    if(dropDown.classList.contains("hidden")){
-      dropDown.classList.remove("show");
-  }
-  else{
-    dropDown.classList.remove("show");
-    dropDown.classList.add("hidden");
-    }
-  }
-  let toggleBtn = document.getElementById('toggleBtn')
- toggleBtn && toggleBtn.addEventListener('click', toggle)
+//   const toggle = ()=>{
+//     let dropDown = document.getElementById("myDropdown");
+//     if(dropDown.classList.contains("hidden")){
+//       dropDown.classList.remove("show");
+//   }
+//   else{
+//     dropDown.classList.remove("show");
+//     dropDown.classList.add("hidden");
+//     }
+//   }
+//   let toggleBtn = document.getElementById('toggleBtn')
+//  toggleBtn && toggleBtn.addEventListener('click', toggle)
 
  
   return (
-    <div className=" w-full h-20 md:px-4 md:py-2">
-      <div className="w-full flex justify-between">
-        <div className="left">
-          <div className="w-fit">
-            <img src={logo} className="w-12 xl:w-16 xl:h-16 h-12" alt="logo" />
-          </div>
-        </div>
-
-        <div className="right w-8 bg-slate-100 mx-3 h-8">
-          <div className="w-full md:hidden h-full rounded-md border-2 border-black border-solid flex flex-col justify-center space-y-1 items-center cursor-pointer" id="toggleBtn">
-            <div className="line w-6 h-[0.1rem] bg-black">-</div>
-            <div className="line w-6 h-[0.1rem] bg-black">-</div>
-            <div className="line w-6 h-[0.1rem] bg-black">-</div>
-          </div>
-          <div class="hidden sm:ml-6 sm:block" id="myDropdown">
-          <div class=" space-x-4 hidden">
-            <a
-              href="#"
-              class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-              aria-current="page"
-            >
-              Dashboard
-            </a>
-            <a
-              href="#"
-              class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Team
-            </a>
-            <a
-              href="#"
-              class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Projects
-            </a>
-            <a
-              href="#"
-              class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >
-              Calendar
-            </a>
-          </div>
-        </div>
-
-       {/* Desktop Menu */}
-         <div className="hidden dm space-x-4">
-            <a href="#about" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
-              About
-            </a>
-            <a href="#projects" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
-              Projects
-            </a>
-            <a href="#contact" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">
-              Contact
-            </a>
-          </div>
-
-
-      </div>
-      </div>
-    </div>
+    <div className="w-full h-20 px-[100px] fixed bg-[#141c27] ">
+         <div className="grow shrink basis-0 h-20 px-3 justify-between items-center flex">
+           <div className="w-full h-20 left-[20px] top-0 absolute" />
+           <div className="w-[180px] h-20 flex-col justify-center items-start inline-flex">
+             <img className="h-20 relative" src="https:via.placeholder.com/180x80" />
+           </div>
+           <div className="justify-start items-start flex">
+             <div className="self-stretch flex-col justify-start items-start inline-flex">
+               <div className="self-stretch px-5 pt-8 pb-[31px] justify-start items-start gap-2.5 inline-flex">
+                 <div className="justify-start items-start flex overflow-hidden">
+                   <div className="text-white text-sm font-medium font-['Poppins'] uppercase leading-3 tracking-wide">Home</div>
+                 </div>
+                 <div className="w-[11.50px] h-3.5 relative" />
+               </div>
+             </div>
+             <div className="self-stretch flex-col justify-start items-start inline-flex">
+               <div className="self-stretch h-[77px] px-5 pt-8 pb-[33px] flex-col justify-start items-start flex">
+                 <div className="justify-start items-start inline-flex overflow-hidden">
+                   <div className="text-white text-sm font-medium font-['Poppins'] uppercase leading-3 tracking-wide">about</div>
+                 </div>
+               </div>
+             </div>
+             <div className="self-stretch flex-col justify-start items-start inline-flex">
+               <div className="self-stretch h-[77px] px-5 pt-8 pb-[33px] flex-col justify-start items-start flex">
+                 <div className="justify-start items-start inline-flex overflow-hidden">
+                   <div className="text-white text-sm font-medium font-['Poppins'] uppercase leading-3 tracking-wide">services</div>
+                 </div>
+               </div>
+             </div>
+             <div className="self-stretch flex-col justify-start items-start inline-flex">
+               <div className="self-stretch h-[77px] px-5 pt-8 pb-[33px] flex-col justify-start items-start flex">
+                 <div className="justify-start items-start inline-flex overflow-hidden">
+                   <div className="text-white text-sm font-medium font-['Poppins'] uppercase leading-3 tracking-wide">projects</div>
+                 </div>
+               </div>
+             </div>
+             <div className="self-stretch flex-col justify-start items-start inline-flex">
+               <div className="self-stretch px-5 pt-8 pb-[31px] justify-start items-start gap-2.5 inline-flex">
+                 <div className="justify-start items-start flex overflow-hidden">
+                   <div className="text-white text-sm font-medium font-['Poppins'] uppercase leading-3 tracking-wide">Blog</div>
+                 </div>
+                 <div className="w-[11.50px] h-3.5 relative" />
+               </div>
+             </div>
+             <div className="self-stretch flex-col justify-start items-start inline-flex">
+               <div className="self-stretch h-[77px] px-5 pt-8 pb-[33px] flex-col justify-start items-start flex">
+                 <div className="justify-start items-start inline-flex overflow-hidden">
+                   <div className="text-white text-sm font-medium font-['Poppins'] uppercase leading-3 tracking-wide">Contact</div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div className="w-20 h-20 pl-[26.88px] pr-[26.87px] pt-6 pb-[26px] bg-[#55e6a5] flex-col justify-start items-start inline-flex">
+             <div className="w-[26.25px] h-[30px] relative origin-top-left rotate-180" />
+           </div>
+         </div>
+       </div>
   );
-// };
+//  };
 }
 
 export default Navbar;
