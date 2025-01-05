@@ -1,0 +1,24 @@
+
+.method-1 {
+  position: relative;
+  display: inline-block;
+  font-size: 100px;
+  font-weight: bolder;
+  color: #d4d4d4;
+
+  &:before {
+    content: attr(data-text);
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    color: #cb4961;
+    animation: fill 3s forwards;
+  }
+}
+
+@keyframes fill {
+  50%   { width: 100%; }
+
+}
+
