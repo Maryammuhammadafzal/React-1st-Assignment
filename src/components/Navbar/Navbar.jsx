@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Theme from "../Theme/Theme.jsx";
 import { All_images } from "../All_images/All_images.js";
-// import logo from "../../assets/my-image/Maryam Afzal-logo.png";
+import logo from "../../assets/my-image/Maryam Afzal-logo.png";
+
 
 function Navbar() {
   //    const navbarMenu = () => {
@@ -25,11 +26,11 @@ function Navbar() {
   //  toggleBtn && toggleBtn.addEventListener('click', toggle)
 
   return (
-    <div className="w-full h-20 px-[100px] fixed bg-[#141c27] ">
+    <div className="w-full h-20 px-[100px] fixed bg-[#060606] ">
       <div className="grow shrink basis-0 h-20 px-3 justify-between items-center flex">
         <div className="w-full h-20 left-[20px] top-0 absolute" />
         <div className="w-[180px] h-20 flex-col justify-center items-start inline-flex">
-          <img className="h-20 relative" src={All_images.my_logo} />
+          <img className="text-white bg-white h-20 w-24" src={logo} alt="img" />
         </div>
         <div className="justify-start items-start flex">
           <div className="self-stretch flex-col justify-start items-start inline-flex">
@@ -89,7 +90,7 @@ function Navbar() {
             </div>
           </div>
         </div>
-        <div className="w-20 h-20  bg-[#55e6a5] justify-center items-center flex">
+        <div className="w-20 h-20  bg-[#fde4a0] justify-center items-center flex">
           <div className="w-full h-full flex justify-center items-center">
             <Theme />
           </div>

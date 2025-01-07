@@ -1,99 +1,90 @@
-// import React, { useState, useEffect } from "react";
-// import Navbar from "../../components/Navbar/Navbar.jsx";
+import React, { useState, useEffect } from "react";
+import Navbar from "../../components/Navbar/Navbar.jsx";
 
-// import Profile_Image from "../../assets/my-image/my-image-01.png";
-// import Banner_Image from "../../assets/my-image/banner_shape.png";
+import Profile_Image from "../../assets/my-image/my-image-01.png";
+import Banner_Image from "../../assets/my-image/banner_shape.png";
 
-// function Hero() {
-//   const words = ["Web Developer", "UI/UX Designer", "Freelancer"];
-//   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-//   const [text, setText] = useState("");
-//   const [isDeleting, setIsDeleting] = useState(false);
-//   const typingSpeed = 150; // Typing speed in ms
-//   const deletingSpeed = 100; // Deleting speed in ms
-//   const pauseTime = 1000; // Pause time before deleting in ms
+function Hero() {
+  const words = ["Web Developer", "UI/UX Designer", "Freelancer"];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const typingSpeed = 150; // Typing speed in ms
+  const deletingSpeed = 100; // Deleting speed in ms
+  const pauseTime = 1000; // Pause time before deleting in ms
 
-//   useEffect(() => {
-//     const currentWord = words[currentWordIndex];
+  useEffect(() => {
+    const currentWord = words[currentWordIndex];
 
-//     const type = () => {
-//       if (isDeleting) {
-//         setText((prev) => prev.slice(0, -1));
-//       } else {
-//         setText((prev) => currentWord.slice(0, prev.length + 1));
-//       }
+    const type = () => {
+      if (isDeleting) {
+        setText((prev) => prev.slice(0, -1));
+      } else {
+        setText((prev) => currentWord.slice(0, prev.length + 1));
+      }
 
-//       if (!isDeleting && text === currentWord) {
-//         setTimeout(() => setIsDeleting(true), pauseTime);
-//       } else if (isDeleting && text === "") {
-//         setIsDeleting(false);
-//         setCurrentWordIndex((prev) => (prev + 1) % words.length);
-//       }
-//     };
+      if (!isDeleting && text === currentWord) {
+        setTimeout(() => setIsDeleting(true), pauseTime);
+      } else if (isDeleting && text === "") {
+        setIsDeleting(false);
+        setCurrentWordIndex((prev) => (prev + 1) % words.length);
+      }
+    };
 
-//     const timer = setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+    const timer = setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
 
-//     return () => clearTimeout(timer);
-//   }, [text, isDeleting, currentWordIndex]);
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, currentWordIndex]);
 
-//   return (
-//     <>
-//       <Navbar />
-//       <div className="w-full h-screen flex bg-black">
-//         <div className="w-1/2 h-full flex flex-col justify-center items-center">
-//           <div className="h-36 flex-col justify-start items-center flex">
-//             <div>
-//               <span class="text-white text-6xl font-bold font-['Poppins'] uppercase leading-[72px]">
-//                 HI, I'M ZYAN!
-//                 <br />
-//                 Creative{" "}
-//               </span>
-//               <span class="text-[#55e6a5] text-6xl font-black font-['Poppins'] uppercase leading-[72px]">
-//                 Player
-//               </span>
-//             </div>
-//           </div>
-//           <div className="w-full h-[108.80px] flex items-center px-10 justify-start text-[#a2a2a2] text-base font-medium font-['Poppins'] leading-7">
-//             I'm a passionate UI/UX designer with a mission to create delightful
-//             and
-//             <br />
-//             intuitive digital experiences. With a strong foundation in design
-//             principles and
-//             <br />a keen eye for detail, I specialize in translating complex
-//             ideas into user-
-//             <br />
-//             friendly interfaces that captivate and engage.
-//           </div>
-//           <div className="w-[638px] justify-start items-center gap-[30px] inline-flex">
-//             <div className="px-10 py-5 bg-[#55e6a5] justify-center items-center gap-2.5 flex">
-//               <div className="text-[#02050a] text-base font-medium font-['Poppins'] leading-7">
-//                 Download CV
-//               </div>
-//               <div className="w-3 h-4 relative" />
-//             </div>
-//             <div className="h-[50px] justify-center items-center gap-2.5 flex">
-//               <div className="text-[#55e6a5] text-[50px] font-black font-['Font Awesome 5 Free'] capitalize leading-[50px]">
-//                 
-//               </div>
-//               <div className="text-white text-base font-normal font-['Poppins'] capitalize leading-7">
-//                 Watch The Video
-//               </div>
-//             </div>
-//           </div>
-//         </div>
+  return (
+    <>
+      <Navbar />
+      <div className="w-full h-screen flex">
+        <div className="w-1/2 h-full py-5 flex flex-col justify-center items-center px-9 space-y-8">
+          <div className="h-36 flex-col justify-start items-center flex">
+            <div>
+              <span class="text-white text-6xl font-bold font-['Poppins'] uppercase leading-[72px]">
+                HI, I'M ZYAN!
+                <br />
+                Creative{" "}
+              </span>
+              <span class="text-[#fde4a0] text-6xl font-black font-['Poppins'] uppercase leading-[72px]">
+                Player
+              </span>
+            </div>
+          </div>
+          <div className="w-full h-[108.80px] flex items-center px-10 justify-start text-[#a2a2a2] text-base font-medium font-['Poppins'] leading-7">
+            I'm a passionate UI/UX designer with a mission to create delightful
+            and
+            <br />
+            intuitive digital experiences. With a strong foundation in design
+            principles and
+            <br />a keen eye for detail, I specialize in translating complex
+            ideas into user-
+            <br />
+            friendly interfaces that captivate and engage.
+          </div>
+          <div className="w-full h-fit px-10 gap-[30px] flex">
+            <div className="px-10 py-5 bg-[#fde4a0] justify-center items-center flex">
+              <div className="text-[#02050a] text-base font-medium font-['Poppins'] leading-7 ">
+                Download CV
+              </div>
+            </div>
+          </div>
+        </div>
 
-//         <div className="w-1/2 h-50 flex justify-center items-center relative ">
-//           <img
-//             className="w-[526px] h-[535px] flex justify-center items-center animate-bounceNew "
-//             src={Banner_Image}
-//           />
-//           <img
-//             className="w-[707px] h-[633.11px] left-[60px] absolute "
-//             src={Profile_Image}
-//           />
-//         </div>
-//       </div>
-//     </>
+        <div className="w-1/2 h-50 flex justify-center items-center relative ">
+          <img
+            className="w-[430px] h-[430px] flex justify-center items-center animate-bounceNew "
+            src={Banner_Image}
+          />
+          <img
+            className="w-[550px] h-[520.11px] left-[100px] absolute "
+            src={Profile_Image}
+          />
+        </div>
+      </div>
+    </>
 
 //     //  <div className="w-[1920px] h-[8865.25px] relative">
 //     //     <div className="w-[1920px] h-[1200px] left-0 top-0 absolute">
@@ -939,7 +930,7 @@
 //     //     <div className="w-[46px] h-[46px] left-0 top-[46px] absolute" />
 //     //   </div>
 //     // </div>
-//   );
-// }
+  );
+}
 
-// export default Hero;
+export default Hero;
