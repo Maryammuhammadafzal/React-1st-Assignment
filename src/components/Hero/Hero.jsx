@@ -5,85 +5,28 @@ import Profile_Image from "../../assets/my-image/my-image-01.png";
 import Banner_Image from "../../assets/my-image/banner_shape.png";
 
 function Hero() {
-  const words = ["Web Developer", "UI/UX Designer", "Freelancer"];
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const typingSpeed = 150; // Typing speed in ms
-  const deletingSpeed = 100; // Deleting speed in ms
-  const pauseTime = 1000; // Pause time before deleting in ms
 
-  useEffect(() => {
-    const currentWord = words[currentWordIndex];
+  
 
-    const type = () => {
-      if (isDeleting) {
-        setText((prev) => prev.slice(0, -1));
-      } else {
-        setText((prev) => currentWord.slice(0, prev.length + 1));
-      }
-
-      if (!isDeleting && text === currentWord) {
-        setTimeout(() => setIsDeleting(true), pauseTime);
-      } else if (isDeleting && text === "") {
-        setIsDeleting(false);
-        setCurrentWordIndex((prev) => (prev + 1) % words.length);
-      }
-    };
-
-    const timer = setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
-
-    return () => clearTimeout(timer);
-  }, [text, isDeleting, currentWordIndex]);
 
   return (
     <>
-      <Navbar />
-      <div className="w-full h-screen flex">
-        <div className="w-1/2 h-full py-5 flex flex-col justify-center items-center px-9 space-y-8">
-          <div className="h-36 flex-col justify-start items-center flex">
-            <div>
-              <span class="text-white text-6xl font-bold font-['Poppins'] uppercase leading-[72px]">
-                HI, I'M ZYAN!
-                <br />
-                Creative{" "}
-              </span>
-              <span class="text-[#fde4a0] text-6xl font-black font-['Poppins'] uppercase leading-[72px]">
-                Player
-              </span>
-            </div>
-          </div>
-          <div className="w-full h-[108.80px] flex items-center px-10 justify-start text-[#a2a2a2] text-base font-medium font-['Poppins'] leading-7">
-            I'm a passionate UI/UX designer with a mission to create delightful
-            and
-            <br />
-            intuitive digital experiences. With a strong foundation in design
-            principles and
-            <br />a keen eye for detail, I specialize in translating complex
-            ideas into user-
-            <br />
-            friendly interfaces that captivate and engage.
-          </div>
-          <div className="w-full h-fit px-10 gap-[30px] flex">
-            <div className="px-10 py-5 bg-[#fde4a0] justify-center items-center flex">
-              <div className="text-[#02050a] text-base font-medium font-['Poppins'] leading-7 ">
-                Download CV
-              </div>
-            </div>
-          </div>
-        </div>
+     
+        <div className="w-full h-screen border-t border-b bg-gray-200 border-[#dddddd] ">
+  <img className="w-80 h-[200px] left-[350px] top-[401px] absolute " src="https://via.placeholder.com/420x200" />
+  <img className="w-80 h-[200px] left-[770px] top-[401px] absolute" src="https://via.placeholder.com/420x200" />
+  <img className="w-80 h-[580px] left-[350px] top-[80px] absolute " src="https://via.placeholder.com/420x600" />
+  <img className="w-80 h-[580px] left-[770px] top-[80px] absolute" src="https://via.placeholder.com/420x600" />
+  <div className="w-72 h-[90.20px] left-56 top-[230.90px] absolute text-[#333333] text-[66.39px] font-bold font-['Arial'] leading-[70.20px]">designer</div>
+  <div className="w-64 h-[50.40px] left-56 top-[310.08px] absolute text-[#757575] text-lg font-normal font-['Arial'] leading-relaxed">Product designer specialising in UI<br/>design and design systems.</div>
+  <div className="w-[290px] h-[90.19px] left-[950px] top-[231px] absolute">
+    <div className="w-[36.61px] h-[82px] left-0 top-[8.19px] absolute text-[#333333] text-[64.15px] font-bold font-['Arial'] leading-[82px]">{"<"}</div>
+    <div className="w-[186.50px] h-[92px] left-10 top-[-1px] absolute text-[#333333] text-[65.59px] font-bold font-['Arial'] leading-[90.20px]">coder</div>
+    <div className="w-[36.61px] h-[82px] left-[233px] top-[8.19px] absolute text-[#333333] text-[64.99px] font-bold font-['Arial'] leading-[82px]">{">"}</div>
+  </div>
+  <div className="w-[257.47px] h-[50.40px] left-[980px] top-[309.08px] absolute text-[#757575] text-lg font-normal font-['Arial'] leading-relaxed">Front end developer who writes<br/>clean, elegant and efficient code.</div>
+</div>          
 
-        <div className="w-1/2 h-50 flex justify-center items-center relative ">
-          <img
-            className="w-[430px] h-[430px] flex justify-center items-center animate-bounceNew "
-            src={Banner_Image}
-          />
-          <img
-            className="w-[550px] h-[520.11px] left-[100px] absolute "
-            src={Profile_Image}
-          />
-        </div>
-      </div>
     </>
 
 //     //  <div className="w-[1920px] h-[8865.25px] relative">

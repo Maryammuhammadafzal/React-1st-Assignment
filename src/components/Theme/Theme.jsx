@@ -112,24 +112,7 @@ import black_bg from "../../assets/my-image/background_images.jpg"
 
 const Theme = () => {
   const [theme, setTheme] = useState("dark"); 
-  const [bg , setBg] = useState(white_bg);
-
-  useEffect(()=>{
-    if(theme === "dark"){
-      document.body.style.backgroundImage = `url(${black_bg})`;
-      document.body.style.backgroundRepeat = "no-repeat";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.color = "#fff";
-      document.body.style.transition = "background-color 0.5s ease-in-out";
-    } else {
-      document.body.style.backgroundImage = `url(${white_bg})`;
-      document.body.style.backgroundRepeat = "no-repeat";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.color = "#000";
-      document.body.style.transition = "background-color 0.5s ease-in-out";
-
-    }
-    }, [theme]);
+  
   
   const handleThemeChange = (event) => {
     const isDarkTheme = event.target.checked; 
@@ -138,14 +121,10 @@ const Theme = () => {
 
     if (isDarkTheme) {
       document.body.style.backgroundImage = `url(${black_bg})`;
-      document.body.style.backgroundRepeat = "no-repeat";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.color = "#fff";
+     
     } else {
       document.body.style.backgroundImage = `url(${white_bg})`;
-      document.body.style.backgroundRepeat = "no-repeat";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.color = "#000";
+      
     }
   };
 
